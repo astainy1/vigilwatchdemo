@@ -25,6 +25,7 @@ const server = http.createServer(app); // Create HTTP server
 initSocket(server); // Initialize Socket.io
 
 app.set('view engine', 'ejs'); //Set templating engine
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({ secret: 'thisisoursecretcode48425', resave: false, saveUninitialized: true }));
